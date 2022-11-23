@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+    fresh-blog-db:
+        image: mysql:5.7
+        container_name: fresh-blog-db
+        environment:
+            MYSQL_DATABASE: fresh-blog_db
+            MYSQL_ROOT_PASSWORD: root
+        ports:
+            - 3333:3306
+        networks:
+            - freshblognet
+
+networks:
+  freshblognet:
+      driver: bridge
